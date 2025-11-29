@@ -6,7 +6,7 @@ import { ASSETS } from '../data/media';
 
 export const Hero = () => {
   return (
-    <div id="hero" className="relative h-screen w-full overflow-hidden">
+    <div id="hero" className="relative h-screen w-full overflow-hidden bg-stone-900">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
@@ -14,15 +14,16 @@ export const Hero = () => {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{ zIndex: 0 }}
           poster={ASSETS.hero.poster}
         >
           <source src={ASSETS.hero.video} type="video/mp4" />
-          Your browser does not support the video tag.
+          {/* Fallback text is rarely seen, poster handles the visual fallback */}
         </video>
         
         {/* Overlay Gradient - Ensures text is readable over the video */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" style={{ zIndex: 1 }} />
       </div>
 
       {/* Content */}
@@ -82,7 +83,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer z-20"
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <ChevronDown className="w-8 h-8 opacity-70" />

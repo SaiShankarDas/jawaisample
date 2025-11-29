@@ -1,16 +1,17 @@
 /**
- * Centralized store for all media assets (Images, Videos, Icons).
+ * Centralized store for all media assets.
  * 
- * INSTRUCTIONS FOR USER:
- * 1. Place your video file 'herobg3.mp4' in the 'public/videos/' folder.
- * 2. Place your poster image 'herocover.jpg' in the 'public/images/' folder.
- * 3. To change other images, simply update the URLs below or replace them with local paths (e.g., "/images/my-photo.jpg").
+ * UPDATES:
+ * - Video path is set to '/videos/herobg3.mp4'.
+ * - Poster is set to a remote Unsplash URL as a fallback so the site looks good immediately.
+ *   Once you have your own 'herocover.jpg', you can change the poster URL below to '/images/herocover.jpg'.
  */
 
 export const ASSETS = {
   hero: {
     video: "/videos/herobg3.mp4",
-    poster: "/images/herocover.jpg",
+    // Using a high-res Unsplash image as a reliable fallback poster
+    poster: "https://images.unsplash.com/photo-1615887023516-9b6c5062a5a3?q=80&w=1920&auto=format&fit=crop",
   },
   about: {
     leopard: "https://images.unsplash.com/photo-1663499475059-666731875343?q=80&w=800&auto=format&fit=crop",
